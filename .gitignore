@@ -1,0 +1,14 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node / Next
+demo-app/node_modules/
+demo-app/.next/
+playwright_runner/node_modules/
+playwright_runner/test-results/
+playwright_runner/playwright-report/
