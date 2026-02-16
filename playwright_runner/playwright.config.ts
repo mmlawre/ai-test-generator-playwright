@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 
+
+
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -76,4 +79,22 @@ export default defineConfig({
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
+
+webServer: {
+  // Local: fast dev server
+  // CI: production build + start (more stable and realistic)
+  command: process.env.CI
+    ? 'cd ../demo-app && npm ci && npm run build && npm run start -- -p 3000'
+    : 'cd ../demo-app && npm install && npm run dev -- -p 3000',
+
+  url: 'http://localhost:3000',
+
+  // Local: reuse if already running, CI: always start fresh
+  reuseExistingServer: !process.env.CI,
+
+  timeout: 180000, // 3 minutes (build can take time in CI)
+},
+
+
+
 });

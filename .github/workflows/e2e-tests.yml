@@ -31,18 +31,12 @@ jobs:
       - name: Install demo app deps
         run: |
           cd demo-app
-          npm install
-
-      - name: Start demo app
-        run: |
-          cd demo-app
-          npm run dev &
-          sleep 10
+          npm ci
 
       - name: Install Playwright deps
         run: |
           cd playwright_runner
-          npm install
+          npm ci
           npx playwright install --with-deps
 
       - name: Generate tests
