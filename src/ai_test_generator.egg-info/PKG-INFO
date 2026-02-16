@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: ai-test-generator
+Version: 0.1.0
+Summary: AI-based test generator that outputs executable Playwright tests
+Requires-Python: >=3.11
+Requires-Dist: pydantic>=2.6
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: openai>=1.40.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: ruff>=0.5; extra == "dev"
